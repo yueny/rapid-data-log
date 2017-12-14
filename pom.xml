@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.yueny.rapid.data</groupId>
+		<artifactId>rapid-data</artifactId>
+		<version>1.0.1-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>rapid-data-log-core</artifactId>
+	<packaging>jar</packaging>
+	
+	<properties>
+		<rapid.lang.thread.version>1.0.1-SNAPSHOT</rapid.lang.thread.version>
+	</properties>
+	
+	<dependencies>
+		<dependency>
+		    <groupId>com.yueny.rapid</groupId>
+			<artifactId>api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.yueny.rapid.lang</groupId>
+			<artifactId>rapid-lang-thread</artifactId>
+			<version>${rapid.lang.thread.version}</version>
+		</dependency>
+		
+		<!-- Project Lombok -->
+		<dependency>
+	        <groupId>org.projectlombok</groupId> 
+	        <artifactId>lombok</artifactId>
+	        <scope>provided</scope>
+	    </dependency>
+		<dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
+        
+        <!-- dubbo扩展 -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>dubbo</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        
+        <!-- log扩展 -->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+        </dependency>
+
+        <!-- web扩展 -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+        </dependency>
+
+        
+        
+        <!-- test -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+    
+</project>
