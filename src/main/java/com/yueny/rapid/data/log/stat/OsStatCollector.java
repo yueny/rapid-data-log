@@ -37,14 +37,14 @@ public class OsStatCollector extends AbstractStatCollector {
 			final UnixOperatingSystemMXBean uosBean = (UnixOperatingSystemMXBean) osBean;
 			return StringUtils
 					.join(new String[] {
-							Long.toString(uosBean.getFreePhysicalMemorySize()
-									/ MB),
-							Long.toString(uosBean.getTotalPhysicalMemorySize()
-									/ MB),
-							Long.toString(uosBean.getFreeSwapSpaceSize() / MB),
-							Long.toString(uosBean.getTotalSwapSpaceSize() / MB),
-							Long.toString(uosBean
-									.getCommittedVirtualMemorySize() / MB) },
+									Long.toString(uosBean.getFreePhysicalMemorySize()
+											/ MB),
+									Long.toString(uosBean.getTotalPhysicalMemorySize()
+											/ MB),
+									Long.toString(uosBean.getFreeSwapSpaceSize() / MB),
+									Long.toString(uosBean.getTotalSwapSpaceSize() / MB),
+									Long.toString(uosBean
+											.getCommittedVirtualMemorySize() / MB) },
 							",");
 		}
 		return "-";

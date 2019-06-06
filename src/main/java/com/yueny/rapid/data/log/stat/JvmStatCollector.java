@@ -44,9 +44,9 @@ public class JvmStatCollector extends AbstractStatCollector {
 	private String getThreadStatistic(final ThreadMXBean threadBean) {
 		return StringUtils
 				.join(new String[] {
-						Long.toString(threadBean.getThreadCount()),
-						Long.toString(threadBean.getPeakThreadCount()),
-						Long.toString(threadBean.getTotalStartedThreadCount()) },
+								Long.toString(threadBean.getThreadCount()),
+								Long.toString(threadBean.getPeakThreadCount()),
+								Long.toString(threadBean.getTotalStartedThreadCount()) },
 						",");
 	}
 }

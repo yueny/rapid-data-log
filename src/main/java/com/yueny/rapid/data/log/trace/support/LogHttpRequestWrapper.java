@@ -1,14 +1,8 @@
 package com.yueny.rapid.data.log.trace.support;
 
-import java.util.Collections;
-import java.util.Enumeration;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletRequestWrapper;
+import java.util.*;
 
 /**
  * @author yueny09 <deep_blue_yang@163.com>

@@ -6,12 +6,12 @@ package com.yueny.rapid.data.log.trace.web.filter.mdc;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.yueny.rapid.data.log.trace.support.LogHttpRequestWrapper;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.MDC;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
-import com.yueny.rapid.data.log.trace.support.LogHttpRequestWrapper;
 import com.yueny.rapid.data.log.trace.util.MDCUtil;
 import com.yueny.superclub.api.constant.ConventionsX;
 
@@ -20,11 +20,11 @@ import com.yueny.superclub.api.constant.ConventionsX;
  * 使用方式<br>
  * <code>
  * <mvc:interceptor>
-			<mvc:mapping path="/**"/>
-			<mvc:exclude-mapping path="/assets/**" />
-			<bean class="com.yueny.rapid.data.log.core.web.filter.mdc.WebLogMdcHandlerInterceptor"/>
-		</mvc:interceptor>
-	</mvc:interceptors>
+ <mvc:mapping path="/**"/>
+ <mvc:exclude-mapping path="/assets/**" />
+ <bean class="com.yueny.rapid.data.log.core.web.filter.mdc.WebLogMdcHandlerInterceptor"/>
+ </mvc:interceptor>
+ </mvc:interceptors>
  *</code>
  *
  * <pre>
@@ -53,19 +53,19 @@ public class WebLogMdcHandlerInterceptor extends HandlerInterceptorAdapter {
 	 */
 	@Override
 	public void afterCompletion(final HttpServletRequest request, final HttpServletResponse response,
-			final Object handler, final Exception ex) throws Exception {
+								final Object handler, final Exception ex) throws Exception {
 		MDC.clear();
 	}
 
 	@Override
 	public void afterConcurrentHandlingStarted(final HttpServletRequest request, final HttpServletResponse response,
-			final Object handler) throws Exception {
+											   final Object handler) throws Exception {
 		preHandle(request, response, handler);
 	}
 
 	@Override
 	public void postHandle(final HttpServletRequest request, final HttpServletResponse response, final Object handler,
-			final ModelAndView modelAndView) throws Exception {
+						   final ModelAndView modelAndView) throws Exception {
 		super.postHandle(request, response, handler, modelAndView);
 	}
 
@@ -86,7 +86,7 @@ public class WebLogMdcHandlerInterceptor extends HandlerInterceptorAdapter {
 		final LogHttpRequestWrapper r = new LogHttpRequestWrapper(request);
 		final String traceId = r.getHeader(ConventionsX.X_TRACE_ID_HEADER);
 
-		final String eventId = MDCUtil.injectTraceAndLogId(traceId);
+		final String eventId = MDCUtil.injectLogId(traceId);
 
 		if (StringUtils.isBlank(traceId)) {
 			r.putHeader(ConventionsX.X_TRACE_ID_HEADER, eventId);

@@ -12,5 +12,5 @@ package com.yueny.rapid.data.log.trace.sub.core;
  *
  */
 public class ExecutorDecorator {
-	// .
+    // .
 }

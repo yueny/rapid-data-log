@@ -73,7 +73,7 @@ public class MdcLogFilter implements Filter {
 	private void handleProviderLog() {
 		final String traceId = RpcContext.getContext().getAttachment(ConventionsX.CTX_TRACE_ID_MDC);
 
-		MDCUtil.injectTraceAndLogId(traceId);
+		MDCUtil.injectLogId(traceId);
 	}
 
 	@Override

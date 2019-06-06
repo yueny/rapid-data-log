@@ -23,13 +23,13 @@ import com.yueny.superclub.api.constant.ConventionsX;
  *
  * <pre>
  * <filter>
-    <filter-name>mdcFilter</filter-name>
-    <filter-class>com.yueny.rapid.data.log.web.filter.mdc.MdcFilter</filter-class>
-  </filter>
-  <filter-mapping>
-    <filter-name>mdcFilter</filter-name>
-    <url-pattern>/*</url-pattern>
-  </filter-mapping>
+ <filter-name>mdcFilter</filter-name>
+ <filter-class>com.yueny.rapid.data.log.web.filter.mdc.MdcFilter</filter-class>
+ </filter>
+ <filter-mapping>
+ <filter-name>mdcFilter</filter-name>
+ <url-pattern>/*</url-pattern>
+ </filter-mapping>
  * </pre>
  *
  * @author yueny09 <deep_blue_yang@163.com>
@@ -48,7 +48,7 @@ public class MdcFilter implements Filter {
 			throws IOException, ServletException {
 		final LogHttpRequestWrapper r = new LogHttpRequestWrapper((HttpServletRequest) request);
 		final String traceId = r.getHeader(ConventionsX.X_TRACE_ID_HEADER);
-		final String eventId = MDCUtil.injectTraceAndLogId(traceId);
+		final String eventId = MDCUtil.injectLogId(traceId);
 
 		if (StringUtils.isBlank(traceId)) {
 			r.putHeader(ConventionsX.X_TRACE_ID_HEADER, eventId);
