@@ -26,6 +26,11 @@
 			<artifactId>rapid-lang-thread</artifactId>
 			<version>${rapid.lang.thread.version}</version>
 		</dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>transmittable-thread-local</artifactId>
+            <version>2.10.2</version>
+        </dependency>
 		
 		<!-- Project Lombok -->
 		<dependency>
