@@ -1,6 +1,6 @@
 ﻿## log增强扩展包
 <dependency>
-	<groupId>com.yueny.rapid.data</groupId>
+	<groupId>com.yueny.rapid</groupId>
 	<artifactId>rapid-data-log-core</artifactId>
 	<version>1.0.1-RELEASE</version>
 </dependency>

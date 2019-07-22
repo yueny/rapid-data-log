@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	<modelVersion>4.0.0</modelVersion>
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <modelVersion>4.0.0</modelVersion>
 
     <parent>
         <groupId>com.yueny</groupId>
@@ -9,44 +9,45 @@
         <version>1.1.5-RELEASE</version>
     </parent>
 
-	<artifactId>rapid-data-log-core</artifactId>
+    <groupId>com.yueny.rapid</groupId>
+    <artifactId>rapid-data-log-core</artifactId>
     <version>1.0.1-RELEASE</version>
-	<packaging>jar</packaging>
-	
-	<properties>
+    <packaging>jar</packaging>
+
+    <properties>
         <yueny.api.latest.version>1.0.1-RELEASE</yueny.api.latest.version>
-		<rapid.lang.thread.version>1.0.1-SNAPSHOT</rapid.lang.thread.version>
-	</properties>
-	
-	<dependencies>
+        <rapid.lang.thread.version>1.0.1-SNAPSHOT</rapid.lang.thread.version>
+    </properties>
+
+    <dependencies>
         <dependency>
             <groupId>com.yueny</groupId>
             <artifactId>api</artifactId>
             <version>${yueny.api.latest.version}</version>
         </dependency>
 
-		<dependency>
-			<groupId>com.yueny.rapid.lang</groupId>
-			<artifactId>rapid-lang-thread</artifactId>
-			<version>${rapid.lang.thread.version}</version>
-		</dependency>
+        <dependency>
+            <groupId>com.yueny.rapid.lang</groupId>
+            <artifactId>rapid-lang-thread</artifactId>
+            <version>${rapid.lang.thread.version}</version>
+        </dependency>
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>transmittable-thread-local</artifactId>
             <version>2.10.2</version>
         </dependency>
-		
-		<!-- Project Lombok -->
-		<dependency>
-	        <groupId>org.projectlombok</groupId> 
-	        <artifactId>lombok</artifactId>
-	        <scope>provided</scope>
-	    </dependency>
-		<dependency>
+
+        <!-- Project Lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
         </dependency>
-        
+
         <!-- dubbo扩展 -->
         <dependency>
             <groupId>com.alibaba</groupId>
@@ -57,7 +58,7 @@
             <artifactId>javax.servlet-api</artifactId>
             <scope>provided</scope>
         </dependency>
-        
+
         <!-- log扩展 -->
         <dependency>
             <groupId>ch.qos.logback</groupId>
@@ -74,8 +75,8 @@
             <artifactId>spring-webmvc</artifactId>
         </dependency>
 
-        
-        
+
+
         <!-- test -->
         <dependency>
             <groupId>org.springframework</groupId>
@@ -88,5 +89,5 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-    
+
 </project>
