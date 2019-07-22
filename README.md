@@ -2,8 +2,12 @@
 <dependency>
 	<groupId>com.yueny.rapid.data</groupId>
 	<artifactId>rapid-data-log-core</artifactId>
-	<version>1.0.1-SNAPSHOT</version>
+	<version>1.0.1-RELEASE</version>
 </dependency>
+
+## Version
+* 1.0.1-RELEASE
+
 
 ##使用说明
 # com.yueny.rapid.data.log.trace 日志链跟踪
