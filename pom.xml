@@ -3,24 +3,28 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 
-	<parent>
-		<groupId>com.yueny.rapid.data</groupId>
-		<artifactId>rapid-data</artifactId>
-		<version>1.0.1-SNAPSHOT</version>
-	</parent>
+    <parent>
+        <groupId>com.yueny</groupId>
+        <artifactId>yueny-parent</artifactId>
+        <version>1.1.5-RELEASE</version>
+    </parent>
 
 	<artifactId>rapid-data-log-core</artifactId>
+    <version>1.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	
 	<properties>
+        <yueny.api.latest.version>1.0.1-RELEASE</yueny.api.latest.version>
 		<rapid.lang.thread.version>1.0.1-SNAPSHOT</rapid.lang.thread.version>
 	</properties>
 	
 	<dependencies>
-		<dependency>
-		    <groupId>com.yueny.rapid</groupId>
-			<artifactId>api</artifactId>
-		</dependency>
+        <dependency>
+            <groupId>com.yueny</groupId>
+            <artifactId>api</artifactId>
+            <version>${yueny.api.latest.version}</version>
+        </dependency>
+
 		<dependency>
 			<groupId>com.yueny.rapid.lang</groupId>
 			<artifactId>rapid-lang-thread</artifactId>

@@ -29,7 +29,7 @@
 </dependency>` 
 > 2 修改日志配置文件。 如 logback.xml
 
-每一个appender的pattern增加`[%X{ctxTraceId}][%X{ctxEventId}]`
+每一个appender的pattern增加`[%X{ctxTraceId}][%X{ctxLogId}]`
 如： 
 ```
 <property name="DEFAULT_PATTERN" value="%d %-5level [%X{ctxTraceId}][%X{ctxLogId}][%thread] %logger{5} - %msg%n"/>
