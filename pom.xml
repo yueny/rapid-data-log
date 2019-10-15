@@ -31,6 +31,7 @@
             <artifactId>rapid-lang-thread</artifactId>
             <version>${rapid.lang.thread.version}</version>
         </dependency>
+
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>transmittable-thread-local</artifactId>
