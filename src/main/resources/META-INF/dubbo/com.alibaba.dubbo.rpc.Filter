@@ -1,1 +1,1 @@
-mdcLogFilter=com.yueny.rapid.data.log.trace.dubbo.filter.mdc.MdcLogFilter
+mdcLogFilter=com.whosly.rapid.data.log.trace.filter.mdc.dubbo.MdcLogFilter
