@@ -7,17 +7,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.whosly.api.constant.ConventionsX;
+import org.apache.dubbo.common.extension.Activate;
+import static org.apache.dubbo.common.constants.CommonConstants.PROVIDER;
+import static org.apache.dubbo.common.constants.CommonConstants.CONSUMER;
+
+import org.apache.dubbo.rpc.*;
+
 import org.slf4j.MDC;
 
-import com.alibaba.dubbo.common.Constants;
-import com.alibaba.dubbo.common.extension.Activate;
-import com.alibaba.dubbo.rpc.Filter;
-import com.alibaba.dubbo.rpc.Invocation;
-import com.alibaba.dubbo.rpc.Invoker;
-import com.alibaba.dubbo.rpc.Result;
-import com.alibaba.dubbo.rpc.RpcContext;
-import com.alibaba.dubbo.rpc.RpcException;
-import com.alibaba.dubbo.rpc.RpcInvocation;
 import com.whosly.rapid.data.log.trace.util.MDCUtil;
 
 import lombok.Setter;
@@ -38,7 +35,7 @@ import lombok.Setter;
  * @DATE 2016年6月7日 上午9:53:16
  *
  */
-@Activate(group = { Constants.PROVIDER, Constants.CONSUMER })
+@Activate(group = { PROVIDER, CONSUMER })
 public class MdcLogFilter implements Filter {
 	@Setter
 	private boolean generateLogId = false;
