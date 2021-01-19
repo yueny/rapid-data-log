@@ -55,6 +55,28 @@
 
 ```
 
+### 在启动类上增加注解配置 @EnableAutoLog，以实现自动注入
+示例代码
+```aidl
+
+@SpringBootApplication(scanBasePackages = {"xxxxxx"})
+@EnableAutoLog(excludePathPatterns="favicon.ico;/assets/**;")
+public class BlogAdminApplication {
+
+    public static void main(String[] args) {
+        try{
+            ApplicationContext context = SpringApplication.run(BlogAdminApplication.class, args);
+            String serverPort = context.getEnvironment().getProperty("server.port");
+            log.info("mblog started at http://localhost:" + serverPort);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+}
+
+```
+
 ### 修改服务选项配置
 - **Dubbo服务**：
 不需要任何配置，会自动在provider和consumer追加上下文
