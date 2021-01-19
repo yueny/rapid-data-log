@@ -28,7 +28,7 @@
 <details>
 <summary>详细信息</summary>
 
-- [`版本信息`](#版本信息)
+- [`版本信息`](#version)
 
 </details>
  
@@ -36,7 +36,7 @@
 <details>
 <summary>详细信息</summary>
 
-- [`同步历史`](#同步历史)
+- [`同步历史`](#history)
 
 </details>
 
@@ -94,9 +94,9 @@ com.yueny.rapid.data.log.px
 
 <br>[⬆ 回到顶部](#table-of-contents)
 
-## 版本信息
+## <a name="version"></a>  版本信息
 [版本信息](version-history.md)
 
 
-## 同步历史
+## <a name="history"></a>  同步历史
 [同步历史](syn-history.md)
