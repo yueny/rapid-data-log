@@ -12,11 +12,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.whosly.api.constant.ConventionsX;
+import com.whosly.rapid.lang.thread.support.InheritableThreadHolder;
 import org.apache.commons.lang3.StringUtils;
 
 import com.whosly.rapid.data.log.trace.support.LogHttpRequestWrapper;
 import com.whosly.rapid.data.log.trace.util.MDCUtil;
-import com.yueny.rapid.lang.thread.support.InheritableThreadHolder;
 
 /**
  * web。xml中配置， 用于替代WebLogMdcHandlerInterceptor
@@ -57,7 +57,7 @@ public class MdcFilter implements Filter {
 
 		chain.doFilter(r, response);
 
-		InheritableThreadHolder.remove();
+		// InheritableThreadHolder.remove();
 	}
 
 	@Override

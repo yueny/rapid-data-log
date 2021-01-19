@@ -61,7 +61,7 @@ public class MDCUtil {
 		// 生成当前线程的logId
 		final String logId = prefix + StringUtils.remove(UUID.randomUUID().toString(), "-");
 		MDC.put(ConventionsX.CTX_LOG_ID_MDC, logId);
-
+		// 以下作废
 		// InheritableThreadHolder.get().setLogId(logId);
 		// InheritableThreadHolder.get().setParentThreadId(Thread.currentThread().getId());
 
@@ -78,6 +78,21 @@ public class MDCUtil {
 		MDC.remove(ConventionsX.CTX_TRACE_ID_MDC);
 		MDC.remove(ConventionsX.CTX_LOG_ID_MDC);
 		return true;
+	}
+
+
+	/**
+	 * 获取 MDC 调用链的 ctxTraceId 信息
+	 */
+	public static String getTraceId() {
+		return MDC.get(ConventionsX.CTX_TRACE_ID_MDC);
+	}
+
+	/**
+	 * 获取 MDC 当前线程的 logId 信息
+	 */
+	public static String getLogId() {
+		return MDC.get(ConventionsX.CTX_LOG_ID_MDC);
 	}
 
 }

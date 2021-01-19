@@ -18,6 +18,7 @@ import com.whosly.rapid.data.log.trace.util.MDCUtil;
 /**
  * 异步/网络请求<br>
  * 使用方式<br>
+ *
  * <code>
  * <mvc:interceptor>
  <mvc:mapping path="/**"/>
@@ -93,6 +94,7 @@ public class WebLogMdcHandlerInterceptor extends HandlerInterceptorAdapter {
 			response.setHeader(ConventionsX.X_TRACE_ID_HEADER, eventId);
 		}
 
+		// 以下暂未实现
 		// if (generateLogId) {
 		// // TODO 来自外部， 取外部值
 		// traceId = StringUtils.remove(UUID.randomUUID().toString(), "-");

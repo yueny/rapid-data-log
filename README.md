@@ -48,7 +48,7 @@
 ### 修改日志配置文件 
 如 logback.xml
 
-每一个appender的pattern增加`[%X{ctxTraceId}][%X{ctxLogId}]`
+每一个appender的pattern增加 `[%X{ctxTraceId}][%X{ctxLogId}]`
 如： 
 ```
 <property name="DEFAULT_PATTERN" value="%d %-5level [%X{ctxTraceId}][%X{ctxLogId}][%thread] %logger{5} - %msg%n"/>
@@ -56,20 +56,20 @@
 ```
 
 ### 修改服务选项配置
-
 - **Dubbo服务**：
-增加 `<dubbo:provider filter="mdcLogFilter"/>`
-或者`<dubbo:consumer filter="mdcLogFilter"/>`
+不需要任何配置，会自动在provider和consumer追加上下文
 
+如果使用了 dubbo 的项目，不需要使用此功能，请做排除配置。
+
+示例如下：
+```aidl
+<dubbo:provider filter="-mdcLogFilter"/>
+或者
+<dubbo:consumer filter="-mdcLogFilter"/>
+```
 - **web服务** ：
-拦截器配置，并放在拦截器第一序列。
-`<mvc:interceptors>
-	<mvc:interceptor>
-		<mvc:mapping path="/**"/>
-		 <mvc:exclude-mapping path="/assets/**" /> 
-		<bean class="com.whosly.rapid.data.log.trace.mdc.WebLogMdcHandlerInterceptor" />
-	</mvc:interceptor>
-</mvc:interceptors>`	
+不需要任何配置，会自动追加上下文
+
 - **线程内子线程** ：
 
 

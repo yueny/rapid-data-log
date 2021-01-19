@@ -27,7 +27,8 @@ import lombok.Setter;
  * 3:在文件中添加 mdcLogFilter=com.yueny.rapid.data.log.dubbo.filter.mdc.MdcLogFilter
  * <br>
  *
- * 4:在dubbo配置中添加<dubbo:provider filter="mdcLogFilter"></dubbo:provider><br>
+ * 4:此步骤不需要。
+ * 在dubbo配置中添加<dubbo:provider filter="mdcLogFilter"></dubbo:provider><br>
  * 或者 <dubbo:consumer filter="mdcLogFilter"></dubbo:consumer><br>
  *
  * @author yueny09 <deep_blue_yang@163.com>
@@ -35,6 +36,7 @@ import lombok.Setter;
  * @DATE 2016年6月7日 上午9:53:16
  *
  */
+// 自动激活
 @Activate(group = { PROVIDER, CONSUMER })
 public class MdcLogFilter implements Filter {
 	@Setter
@@ -51,7 +53,9 @@ public class MdcLogFilter implements Filter {
 		Map<String, String> attachments = invocation.getAttachments();
 		if (attachments != null) {
 			attachments = new HashMap<String, String>(attachments);
-			attachments.put(ConventionsX.CTX_TRACE_ID_MDC, MDC.get(ConventionsX.CTX_LOG_ID_MDC));
+//			attachments.put(ConventionsX.CTX_TRACE_ID_MDC, MDC.get(ConventionsX.CTX_LOG_ID_MDC));
+			// or
+			attachments.put(ConventionsX.CTX_TRACE_ID_MDC, MDCUtil.getLogId());
 		}
 		RpcContext.getContext().setInvoker(invoker).setInvocation(invocation);
 
@@ -90,8 +94,8 @@ public class MdcLogFilter implements Filter {
 			return invoker.invoke(invocation);
 		} finally {
 			// 通常RPC之间的通信可能存在多次，故每次不会清空当前的上下文
-			// MDC.clear();
-			// RpcContext.removeContext();
+			 MDC.clear();
+			 RpcContext.removeContext();
 		}
 	}
 
