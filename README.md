@@ -2,7 +2,6 @@
 
 ## Table of Contents
 ### 使用方式
-
 <details>
 <summary>详细信息</summary>
 
@@ -12,8 +11,7 @@
 
 </details>
 
-### [`包路径说明`](#包路径说明) 
-
+### 包路径说明
 <details>
 <summary>详细信息</summary>
 
@@ -26,12 +24,24 @@
 
 </details>
 
-### [`版本信息`](#版本信息)
+### 版本信息
+<details>
+<summary>详细信息</summary>
+
+- [`版本信息`](#版本信息)
+
+</details>
  
-### [`同步历史`](#同步历史) 
+### 同步历史
+<details>
+<summary>详细信息</summary>
+
+- [`同步历史`](#同步历史)
+
+</details>
 
 
-## <a name="使用方式"></a> 使用方式
+## 使用方式
 ### 依赖jar服务
 引入对应版本的pom 依赖
 
@@ -63,7 +73,7 @@
 - **线程内子线程** ：
 
 
-## <a name="包路径说明"></a> 包路径说明
+## 包路径说明
 ### 日志链跟踪
 com.yueny.rapid.data.log.trace 
 
@@ -84,9 +94,9 @@ com.yueny.rapid.data.log.px
 
 <br>[⬆ 回到顶部](#table-of-contents)
 
-## <a name="版本信息"></a> 版本信息
+## 版本信息
 [版本信息](version-history.md)
 
 
-## <a name="同步历史"></a> 同步历史
+## 同步历史
 [同步历史](syn-history.md)
